@@ -2,6 +2,7 @@ import scapy.all as scapy
 from scapy.layers import http
 import pyfiglet
 import argparse
+
 def network_sniffing(interface) :
     scapy.sniff(iface=interface , store =False , prn = display_result , filter ="tcp or udp")
 
