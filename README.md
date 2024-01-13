@@ -7,7 +7,7 @@ It provides real-time insights, packet capture and analysis, and filtering capab
 
 To install the Spyfire Tool, follow these steps:
 
-- git clone [https://github.com/your-username/network-traffic-tool.git](https://github.com/MedAmyyne/MITM.git)https://github.com/MedAmyyne/MITM.git
+- git clone (https://github.com/MedAmyyne/MITM.git)https://github.com/MedAmyyne/MITM.git
 - pip3 install -r requirements.txt
 
 
