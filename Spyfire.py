@@ -6,7 +6,7 @@ import argparse
 def network_sniffing(interface) :
     scapy.sniff(iface=interface , store =False , prn = display_result , filter ="tcp or udp")
 
-def Get_Elements():
+def get_Elements():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--interface", dest="interface", help="Choose interface to work with")
     options = parser.parse_args()
@@ -38,5 +38,5 @@ def display_result (packet) :
 if __name__ == "__main__":
     banner = pyfiglet.figlet_format("Spyfire")
     print(banner)
-    option = Get_Elements()
+    option = get_Elements()
     network_sniffing(option.interface)
