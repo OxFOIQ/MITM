@@ -1,17 +1,20 @@
+
 import scapy.all as scapy
 from scapy.layers import http
 import pyfiglet
 import argparse
+import time
+import sys
 
 def network_sniffing(interface) :
-    scapy.sniff(iface=interface , store =False , prn = display_result , filter ="tcp or udp")
+    scapy.sniff(iface=interface , store =False , prn = display_result , filter="tcp or udp")
 
-def get_Elements():
+def Get_Elements():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--interface", dest="interface", help="Choose interface to work with")
     options = parser.parse_args()
-    if not options.interface:
-        parser.error("[!!] Please specify specefic interface or Use --help for more information.")
+    if not options.interface in ["eth0", "wlan0"]:
+        sys.exit("[!!] Please specify specefic interface or Use --help for more information.")
     return options
 
 def capture_packet(packet) :
@@ -38,5 +41,12 @@ def display_result (packet) :
 if __name__ == "__main__":
     banner = pyfiglet.figlet_format("Spyfire")
     print(banner)
-    option = get_Elements()
-    network_sniffing(option.interface)
+    print("Listening Mode ...")
+    try :
+        option = Get_Elements()
+        network_sniffing(option.interface)
+    except KeyboardInterrupt :
+        print("\n[+] Detected CTRL + C ... Please wait !! ")
+        time.sleep(2)
+        print("Quitting Successfully")
+
