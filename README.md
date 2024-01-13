@@ -25,4 +25,4 @@ Sudo python3 Spyfire.py --help / -h
 
  ## Usage
 
-- sudo python3 Spyfire.py -i <interface>
+- sudo python3 Spyfire.py -i < interface >
