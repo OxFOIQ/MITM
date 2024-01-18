@@ -41,6 +41,8 @@ def display_result (packet) :
 if __name__ == "__main__":
     banner = pyfiglet.figlet_format("Spyfire")
     print(banner)
+    print("-"*29+ "By MedAmyyne" + "-"*29)
+    print("="*70)    
     print("Listening Mode ...")
     try :
         option = Get_Elements()
